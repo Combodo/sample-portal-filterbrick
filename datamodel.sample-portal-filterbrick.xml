@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.3">
+	<module_designs>
+		<module_design id="itop-portal" xsi:type="portal">
+			<bricks>
+				<!-- Exemple for a BrowseBrick -->
+				<brick id="filter-services" xsi:type="Combodo\iTop\Portal\Brick\FilterBrick" _delta="define">
+					<rank>
+						<default>90</default>
+					</rank>
+					<width>6</width>
+					<title>
+						<default>Services</default>
+					</title>
+					<description>
+						<![CDATA[ <p>Saisir des mots clés</p> ]]>
+					</description>
+					<decoration_class>
+						<default>fc fc-life-saver fc-2x</default>
+					</decoration_class>
+					<!--
+                    <search_placeholder_value>Brick:Portal:Filter:SearchInput:Placeholder</search_placeholder_value>
+                    -->
+					<!--
+                    <search_submit_label>Brick:Portal:Filter:SearchInput:Submit</search_submit_label>
+                    -->
+					<!--
+                    <search_submit_class>glyphicon glyphicon-search</search_submit_class>
+                    -->
+					<target_brick>
+						<id>services</id>
+						<!-- <type> must correspond to the <brick xsi:type> tag. As of today, only BrowseBrick and ManageBrick are supported. (Default value is BrowseBrick -for backward compatibility-) -->
+                        <type>Combodo\iTop\Portal\Brick\BrowseBrick</type>
+                        <!-- <tab> must a browse mode if the target brick is a BrowseBrick or a grouping tab if the target brick is a ManageBrick -->
+						<tab>list</tab>
+					</target_brick>
+				</brick>
+
+				<!-- Example for a ManageBrick. -->
+				<!-- Note the templates and data_loading nodes in the targeted brick node ! -->
+				<brick id="filter-tickets" xsi:type="Combodo\iTop\Portal\Brick\FilterBrick" _delta="define">
+                    <rank>
+                        <default>95</default>
+                    </rank>
+                    <width>6</width>
+                    <title>
+                        <default>Tickets</default>
+                    </title>
+                    <description>
+                        <![CDATA[ <p>Saisir des mots clés</p> ]]>
+                    </description>
+                    <decoration_class>
+                        <default>fc fc-life-saver fc-2x</default>
+                    </decoration_class>
+                    <!--
+                    <search_placeholder_value>Brick:Portal:Filter:SearchInput:Placeholder</search_placeholder_value>
+                    -->
+                    <!--
+                    <search_submit_label>Brick:Portal:Filter:SearchInput:Submit</search_submit_label>
+                    -->
+                    <!--
+                    <search_submit_class>glyphicon glyphicon-search</search_submit_class>
+                    -->
+                    <target_brick>
+                        <id>ongoing-tickets-for-portal-user</id>
+                        <type>Combodo\iTop\Portal\Brick\ManageBrick</type>
+                        <tab>opened</tab>
+                    </target_brick>
+                </brick>
+			</bricks>
+		</module_design>
+	</module_designs>
+</itop_design>
