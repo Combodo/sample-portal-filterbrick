@@ -1,0 +1,1 @@
+Note: Deprecated as of iTop 2.4 as it is included in the portal base framework.
